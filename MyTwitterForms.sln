@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTwitterForms", "MyTwitter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTwitterForms.Tests", "MyTwitterForms.Tests\MyTwitterForms.Tests.csproj", "{3435A725-F145-489D-9F49-48C2F749F1AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTwitterForms.UI", "MyTwitterForms.UI\MyTwitterForms.UI.csproj", "{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +69,17 @@ Global
 		{3435A725-F145-489D-9F49-48C2F749F1AB}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{3435A725-F145-489D-9F49-48C2F749F1AB}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{3435A725-F145-489D-9F49-48C2F749F1AB}.Release|iPhone.Build.0 = Release|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{5CBA4A8F-95CF-4A81-BDFB-4899192A3DC2}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

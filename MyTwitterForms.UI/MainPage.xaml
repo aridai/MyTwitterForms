@@ -1,14 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     xmlns ="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MyTwitterForms.MainPage">
-
-    <ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness">
-            <On Platform="iOS">0,20,0,0</On>
-        </OnPlatform>
-    </ContentPage.Padding>
+    x:Class="MyTwitterForms.UI.MainPage"
+    Title="ページ">
 
     <StackLayout Orientation="Vertical">
 

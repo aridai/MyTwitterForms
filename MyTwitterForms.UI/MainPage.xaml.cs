@@ -1,12 +1,15 @@
+using System;
+using System.Collections.Generic;
+
 using Xamarin.Forms;
 
-namespace MyTwitterForms
+namespace MyTwitterForms.UI
 {
     public partial class MainPage : ContentPage
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }
