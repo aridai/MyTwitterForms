@@ -23,5 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyTwitterForms.UI\MyTwitterForms.UI.csproj" />
+    <ProjectReference Include="..\MyTwitterForms.Application\MyTwitterForms.Application.csproj" />
   </ItemGroup>
 </Project>

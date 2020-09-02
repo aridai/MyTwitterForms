@@ -1,3 +1,4 @@
+using MyTwitterForms.Application;
 using MyTwitterForms.UI;
 using Prism.Ioc;
 using Prism.Unity;
@@ -16,6 +17,7 @@ namespace MyTwitterForms
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             MyTwitterFormsUI.Register(containerRegistry);
+            MyTwitterFormsApplication.Register(containerRegistry);
         }
     }
 }
