@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:tl="clr-namespace:MyTwitterForms.UI.Timeline"
+    x:Class="MyTwitterForms.UI.Timeline.TweetView">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <tl:PostedAtConverter x:Key="Converter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <StackLayout
+        Margin="10"
+        Padding="5"
+        Orientation="Vertical">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ff:CachedImage
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                Grid.Column="0"
+                Source="{Binding UserIconUrl}" />
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="10,0"
+                Text="{Binding UserName}"
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Center"
+                MaxLines="1" />
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="10,0"
+                Text="{Binding ScreenName, StringFormat='@{0}'}"
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Center"
+                FontSize="Small"
+                MaxLines="1" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="10,0"
+                Text="{Binding PostedAt, Converter={StaticResource Converter}}"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"
+                FontSize="Micro"
+                MaxLines="1" />
+
+        </Grid>
+
+        <Label
+            Margin="20,5"
+            Text="{Binding Body}"
+            FontSize="Small" />
+
+    </StackLayout>
+
+</ContentView>
