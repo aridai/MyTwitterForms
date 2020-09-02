@@ -1,14 +1,21 @@
 using MyTwitterForms.UI;
-using Xamarin.Forms;
+using Prism.Ioc;
+using Prism.Unity;
 
 namespace MyTwitterForms
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         public App()
         {
             this.InitializeComponent();
-            this.MainPage = new MainPage();
+        }
+
+        protected override void OnInitialized() { }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            MyTwitterFormsUI.Register(containerRegistry);
         }
     }
 }

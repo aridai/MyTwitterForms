@@ -1,6 +1,11 @@
+using Prism.Ioc;
+
 namespace MyTwitterForms.UI
 {
-    public class MyTwitterFormsUI
+    public static class MyTwitterFormsUI
     {
+        public static void Register(IContainerRegistry registry)
+        {
+        }
     }
 }
