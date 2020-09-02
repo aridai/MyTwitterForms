@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 using Xamarin.Forms;
 
 namespace MyTwitterForms.UI
@@ -9,7 +6,7 @@ namespace MyTwitterForms.UI
     {
         public MainPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
