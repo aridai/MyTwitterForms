@@ -13,15 +13,18 @@ namespace MyTwitterForms.Application.Login.Tokens
         {
             public string SessionId { get; }
 
+            public string PinCode { get; }
+
             public CancellationToken Cancellation { get; }
 
-            public Request(string sessionId, CancellationToken cancellation)
+            public Request(string sessionId, string pinCode, CancellationToken cancellation)
             {
                 this.SessionId = sessionId;
+                this.PinCode = pinCode;
                 this.Cancellation = cancellation;
             }
 
-            public Request(string sessionId) : this(sessionId, CancellationToken.None) { }
+            public Request(string sessionId, string pinCode) : this(sessionId, pinCode, CancellationToken.None) { }
         }
 
         public abstract class Response
