@@ -20,8 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Timeline\" />
+    <Folder Include="Login\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyTwitterForms.Application\MyTwitterForms.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Login\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

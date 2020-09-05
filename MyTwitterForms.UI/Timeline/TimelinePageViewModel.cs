@@ -36,6 +36,8 @@ namespace MyTwitterForms.UI.Timeline
                 .Where(value => value)
                 .Subscribe(_ => this.FetchTimeline())
                 .AddTo(this.disposables);
+
+            this.navigationService.NavigateAsync(nameof(Login.LoginPage)).Wait();
         }
 
         //  タイムラインを取得する。
