@@ -1,3 +1,4 @@
+using MyTwitterForms.UI.Login;
 using MyTwitterForms.UI.Timeline;
 using Prism.Ioc;
 
@@ -9,6 +10,7 @@ namespace MyTwitterForms.UI
         {
             registry.RegisterForNavigation<MainPage>(nameof(MainPage));
             registry.RegisterForNavigation<TimelinePage>(nameof(TimelinePage));
+            registry.RegisterForNavigation<LoginPage>(nameof(LoginPage));
         }
     }
 }
