@@ -31,6 +31,9 @@ jobs:
       with:
         dotnet-version: 3.1.101
 
+    - name: Restore Env
+      run: echo ${{ secrets.ENV_CS }} | base64 -d > MyTwitterForms/Env.cs
+
     - name: Restore dependencies
       run: msbuild ${{ steps.find-solution.outputs.path }} /t:restore
 

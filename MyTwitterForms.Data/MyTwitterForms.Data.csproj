@@ -13,6 +13,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Prism.Forms" Version="7.2.0.1422" />
+    <PackageReference Include="CoreTweet" Version="1.0.0.483" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Login\" />

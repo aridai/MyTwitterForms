@@ -8,7 +8,7 @@ namespace MyTwitterForms.Data
     {
         public static void Register(IContainerRegistry registry)
         {
-            registry.RegisterInstance<ILoginRepository>(new StubLoginRepository());
+            registry.RegisterSingleton<ILoginRepository, LoginRepository>();
         }
     }
 }
