@@ -18,6 +18,8 @@ namespace MyTwitterForms
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterInstance(new ApiKeys(Env.ApiKey, Env.ApiSecretKey));
+
             MyTwitterFormsUI.Register(containerRegistry);
             MyTwitterFormsApplication.Register(containerRegistry);
             MyTwitterFormsModel.Register(containerRegistry);

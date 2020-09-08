@@ -8,6 +8,15 @@ Xamarin.Forms練習用のかんたんなTwitterクライアントアプリ
 
 ## 開発
 
+### 環境変数
+
+以下のコマンドによって、ビルド前に `MyTwitterForms/Env.cs` の復元が必要  
+(定数フィールドの一覧は `MyTwitterForms/EnvTemplate.cs` を参照)
+
+```
+echo Base64エンコードされたEnv.csの中身 | base64 -d > MyTwitterForms/Env.cs
+```
+
 ### CI
 
 GitHub Actionsを利用  
