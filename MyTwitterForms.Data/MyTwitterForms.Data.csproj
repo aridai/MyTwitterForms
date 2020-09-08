@@ -12,15 +12,12 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />
+    <PackageReference Include="Prism.Forms" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Timeline\" />
     <Folder Include="Login\" />
-    <Folder Include="Login\Session\" />
-    <Folder Include="Login\Tokens\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyTwitterForms.Model\MyTwitterForms.Model.csproj" />
+    <ProjectReference Include="..\MyTwitterForms.Application\MyTwitterForms.Application.csproj" />
   </ItemGroup>
 </Project>

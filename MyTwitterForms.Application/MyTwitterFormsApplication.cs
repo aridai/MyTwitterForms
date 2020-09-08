@@ -10,8 +10,8 @@ namespace MyTwitterForms.Application
         public static void Register(IContainerRegistry registry)
         {
             registry.Register<ITimelineFetchUseCase, StubTimelineFetchInteractor>();
-            registry.Register<ILoginSessionBeginUseCase, StubLoginSessionBeginInteractor>();
-            registry.Register<IAccessTokensObtainUseCase, StubAccessTokensObtainInteractor>();
+            registry.Register<ILoginSessionBeginUseCase, LoginSessionBeginInteractor>();
+            registry.Register<IAccessTokensObtainUseCase, AccessTokensObtainInteractor>();
         }
     }
 }
