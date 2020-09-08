@@ -1,4 +1,5 @@
 using MyTwitterForms.Application;
+using MyTwitterForms.Data;
 using MyTwitterForms.Model;
 using MyTwitterForms.UI;
 using Prism.Ioc;
@@ -20,6 +21,7 @@ namespace MyTwitterForms
             MyTwitterFormsUI.Register(containerRegistry);
             MyTwitterFormsApplication.Register(containerRegistry);
             MyTwitterFormsModel.Register(containerRegistry);
+            MyTwitterFormsData.Register(containerRegistry);
         }
     }
 }
