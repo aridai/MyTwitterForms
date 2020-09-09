@@ -1,13 +1,20 @@
-using Xamarin.Forms;
+using Prism.Ioc;
 
 namespace MyTwitterForms
 {
-    public partial class App : Application
+    public partial class App
     {
         public App()
         {
             this.InitializeComponent();
-            this.MainPage = new MainPage();
+        }
+
+        protected override void OnInitialized() { }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<MainPage>(nameof(MainPage));
+            containerRegistry.RegisterForNavigation<LoginPage>(nameof(LoginPage));
         }
     }
 }

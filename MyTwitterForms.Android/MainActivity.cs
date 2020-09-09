@@ -23,6 +23,7 @@ namespace MyTwitterForms.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             this.LoadApplication(new App());
         }
 

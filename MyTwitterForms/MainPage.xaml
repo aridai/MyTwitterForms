@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage
-    xmlns ="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MyTwitterForms.MainPage">
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="MyTwitterForms.MainPage"
+    prism:ViewModelLocator.AutowireViewModel="True">
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -10,13 +13,78 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <StackLayout Orientation="Vertical">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
 
-        <Label
-            Text="MyTwitterForms"
-            HorizontalOptions="CenterAndExpand"
-            VerticalOptions="CenterAndExpand" />
+        <ListView
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HasUnevenRows="True"
+            ItemsSource="{Binding Tweets}">
 
-    </StackLayout>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding User.Name}" />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding User.Name, StringFormat='(@{0})'}"
+                                FontSize="Small" />
+
+                            <ff:CachedImage
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="0"
+                                Source="{Binding User.ProfileImageUrlHttps}" />
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Text="{Binding Text}" />
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="戻る"
+            Command="{Binding BackButtonCommand}" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="ログイン"
+            Command="{Binding LoginButtonCommand}" />
+    </Grid>
 
 </ContentPage>
