@@ -1,4 +1,5 @@
 using MyTwitterForms.Application.Login.Session;
+using MyTwitterForms.Application.Login.Status;
 using MyTwitterForms.Application.Login.Tokens;
 using MyTwitterForms.Application.Timeline;
 using Prism.Ioc;
@@ -12,6 +13,7 @@ namespace MyTwitterForms.Application
             registry.Register<ITimelineFetchUseCase, StubTimelineFetchInteractor>();
             registry.Register<ILoginSessionBeginUseCase, LoginSessionBeginInteractor>();
             registry.Register<IAccessTokensObtainUseCase, AccessTokensObtainInteractor>();
+            registry.Register<ILoginStatusGetUseCase, StubLoginStatusGetInteractor>();
         }
     }
 }
