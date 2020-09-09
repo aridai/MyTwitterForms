@@ -6,6 +6,8 @@ Xamarin.Forms練習用のかんたんなTwitterクライアントアプリ
 ![C#](https://img.shields.io/static/v1?label=language&message=C%23&color=brightgreen)
 ![Xamarin.Forms](https://img.shields.io/static/v1?label=framework&message=Xamarin.Forms&color=purple)
 
+![MyTwitterForms](MyTwitterForms.gif)
+
 ## 開発
 
 ### 環境変数
