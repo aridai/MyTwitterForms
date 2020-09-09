@@ -13,6 +13,12 @@ namespace MyTwitterForms.Application.Login
         //  アクセストークンを取得する。
         Task<Result<AccessTokens>> ObtainAccessTokens(string sessionId, string pinCode, CancellationToken cancellation);
 
+        //  アクセストークンを保存する。
+        void SaveAccessTokens(AccessTokens accessTokens);
+
+        //  保存されているアクセストークンを取得する。
+        AccessTokens? GetAccessTokens();
+
         public abstract class Result<T>
         {
             private Result() { }

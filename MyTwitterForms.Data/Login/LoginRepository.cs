@@ -9,6 +9,9 @@ namespace MyTwitterForms.Data.Login
 {
     internal class LoginRepository : ILoginRepository
     {
+        private const string AccessTokenKey = "ACCESS_TOKEN";
+        private const string AccessTokenSecretKey = "ACCESS_TOKEN_SECRET";
+
         private readonly ApiKeys apiKeys;
 
         private (string, CoreTweet.OAuth.OAuthSession)? currentSession = null;
@@ -92,6 +95,21 @@ namespace MyTwitterForms.Data.Login
 
                 return new Result<AccessTokens>.Failure<AccessTokens>(e);
             }
+        }
+
+        public void SaveAccessTokens(AccessTokens accessTokens)
+        {
+            Xamarin.Essentials.Preferences.Set(AccessTokenKey, accessTokens.AccessToken);
+            Xamarin.Essentials.Preferences.Set(AccessTokenSecretKey, accessTokens.AccessTokenSecret);
+        }
+
+        public AccessTokens? GetAccessTokens()
+        {
+            var token = Xamarin.Essentials.Preferences.Get(AccessTokenKey, null);
+            var secret = Xamarin.Essentials.Preferences.Get(AccessTokenSecretKey, null);
+
+            if (token == null || secret == null) return null;
+            else return new AccessTokens(token, secret);
         }
     }
 }
