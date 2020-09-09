@@ -13,7 +13,7 @@ namespace MyTwitterForms.Application
             registry.Register<ITimelineFetchUseCase, StubTimelineFetchInteractor>();
             registry.Register<ILoginSessionBeginUseCase, LoginSessionBeginInteractor>();
             registry.Register<IAccessTokensObtainUseCase, AccessTokensObtainInteractor>();
-            registry.Register<ILoginStatusGetUseCase, StubLoginStatusGetInteractor>();
+            registry.Register<ILoginStatusGetUseCase, LoginStatusGetInteractor>();
         }
     }
 }

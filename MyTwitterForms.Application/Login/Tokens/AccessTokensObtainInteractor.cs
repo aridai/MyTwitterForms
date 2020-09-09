@@ -23,14 +23,20 @@ namespace MyTwitterForms.Application.Login.Tokens
                 cancellation: request.Cancellation
             );
 
-            return result switch
+            switch (result)
             {
-                //  TODO: アクセストークンの保存処理を追加
-                Result<AccessTokens>.Success<AccessTokens> _ => new Response.Success(),
-                Result<AccessTokens>.Cancelled<AccessTokens> _ => new Response.Cancelled(),
-                Result<AccessTokens>.Failure<AccessTokens> failure => new Response.Failure(cause: failure.Cause),
-                _ => throw new InvalidOperationException(),
-            };
+                case Result<AccessTokens>.Success<AccessTokens> success:
+                    this.repository.SaveAccessTokens(accessTokens: success.Value);
+                    return new Response.Success();
+
+                case Result<AccessTokens>.Cancelled<AccessTokens> _:
+                    return new Response.Cancelled();
+
+                case Result<AccessTokens>.Failure<AccessTokens> failure:
+                    return new Response.Failure(cause: failure.Cause);
+
+                default: throw new InvalidOperationException();
+            }
         }
     }
 }
