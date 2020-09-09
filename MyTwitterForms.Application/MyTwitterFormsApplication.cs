@@ -10,7 +10,7 @@ namespace MyTwitterForms.Application
     {
         public static void Register(IContainerRegistry registry)
         {
-            registry.Register<ITimelineFetchUseCase, StubTimelineFetchInteractor>();
+            registry.Register<ITimelineFetchUseCase, TimelineFetchInteractor>();
             registry.Register<ILoginSessionBeginUseCase, LoginSessionBeginInteractor>();
             registry.Register<IAccessTokensObtainUseCase, AccessTokensObtainInteractor>();
             registry.Register<ILoginStatusGetUseCase, LoginStatusGetInteractor>();
