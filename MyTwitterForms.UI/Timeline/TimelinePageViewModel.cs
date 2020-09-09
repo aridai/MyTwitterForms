@@ -3,7 +3,10 @@ using System.Collections.ObjectModel;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Threading;
+using System.Threading.Tasks;
+using MyTwitterForms.Application.Login.Status;
 using MyTwitterForms.Application.Timeline;
+using MyTwitterForms.UI.Login;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Reactive.Bindings;
@@ -12,9 +15,10 @@ using static MyTwitterForms.Application.Timeline.ITimelineFetchUseCase;
 
 namespace MyTwitterForms.UI.Timeline
 {
-    internal class TimelinePageViewModel : BindableBase, IDestructible
+    internal class TimelinePageViewModel : BindableBase, IInitializeAsync, IDestructible
     {
         private readonly INavigationService navigationService;
+        private readonly ILoginStatusGetUseCase loginStatusGetUseCase;
         private readonly ITimelineFetchUseCase timelineFetchUseCase;
         private readonly CompositeDisposable disposables = new CompositeDisposable();
 
@@ -25,9 +29,14 @@ namespace MyTwitterForms.UI.Timeline
 
         public ReactiveProperty<bool> IsRefreshing { get; } = new ReactiveProperty<bool>(initialValue: false);
 
-        public TimelinePageViewModel(INavigationService navigationService, ITimelineFetchUseCase timelineFetchUseCase)
+        public TimelinePageViewModel(
+            INavigationService navigationService,
+            ILoginStatusGetUseCase loginStatusGetUseCase,
+            ITimelineFetchUseCase timelineFetchUseCase
+        )
         {
             this.navigationService = navigationService;
+            this.loginStatusGetUseCase = loginStatusGetUseCase;
             this.timelineFetchUseCase = timelineFetchUseCase;
 
             this.Tweets = new ReadOnlyObservableCollection<Tweet>(this.tweets);
@@ -36,8 +45,6 @@ namespace MyTwitterForms.UI.Timeline
                 .Where(value => value)
                 .Subscribe(_ => this.FetchTimeline())
                 .AddTo(this.disposables);
-
-            this.navigationService.NavigateAsync(nameof(Login.LoginPage)).Wait();
         }
 
         //  タイムラインを取得する。
@@ -75,6 +82,15 @@ namespace MyTwitterForms.UI.Timeline
                 this.cancellation?.Dispose();
                 this.cancellation = null;
             }
+        }
+
+        async Task IInitializeAsync.InitializeAsync(INavigationParameters parameters)
+        {
+            var request = new ILoginStatusGetUseCase.Request();
+            var response = this.loginStatusGetUseCase.Execute(request);
+
+            //  未ログインならばログイン画面に飛ばす。
+            if (!response.IsLoggedIn) await this.navigationService.NavigateAsync(nameof(LoginPage));
         }
 
         void IDestructible.Destroy()

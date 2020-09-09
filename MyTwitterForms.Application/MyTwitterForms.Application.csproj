@@ -19,6 +19,7 @@
     <Folder Include="Login\" />
     <Folder Include="Login\Session\" />
     <Folder Include="Login\Tokens\" />
+    <Folder Include="Login\Status\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyTwitterForms.Model\MyTwitterForms.Model.csproj" />
