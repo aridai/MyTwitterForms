@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Login\" />
+    <Folder Include="Timeline\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyTwitterForms.Application\MyTwitterForms.Application.csproj" />
