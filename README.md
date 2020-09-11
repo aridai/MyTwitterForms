@@ -6,7 +6,14 @@ Xamarin.Forms練習用のかんたんなTwitterクライアントアプリ
 ![C#](https://img.shields.io/static/v1?label=language&message=C%23&color=brightgreen)
 ![Xamarin.Forms](https://img.shields.io/static/v1?label=framework&message=Xamarin.Forms&color=purple)
 
-![MyTwitterForms](MyTwitterForms.gif)
+<img width="320" alt="MyTwitterForms" src="MyTwitterForms.gif">
+
+※ 注意!
+
+* Xamarin.Formsの練習用に作成したアプリなので、機能が足りなかったり、細かな作り込みが足りなかったりします。  
+* 練習目的なので `master` ブランチのコードはレイヤごとにプロジェクトを分割した設計になっています。
+  * この程度の規模のアプリの場合、UIにロジックを直接書いてしまっても問題ないかと思われます。
+  * 実際にこの程度の処理ならば [`simple`](https://github.com/aridai/MyTwitterForms/tree/simple) ブランチのようなコードで十分です。
 
 ## 開発
 
